@@ -21,7 +21,7 @@ After that restart tomcat services to effect these changes
 User & Password Edit:
 # cd ../
 # cd conf
-# vi user-server.xml
+# vi tomcat-users.xml
  add user details :
 	<role rolename="manager-gui"/>
 	<role rolename="manager-script"/>
