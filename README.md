@@ -8,6 +8,10 @@ Start tomcat:
 
 # ./startup.sh
 
+# Install java into server 
+  yum list | grep java-1.8.0
+  yum install java-----------
+  
 (connecting outside world to edit context.xml) 
  search for context.xml
 # find / -name context.xml
@@ -18,6 +22,7 @@ you will get three files
 /home/ec2-user/apache-tomcat-9.0.58/webapps/host-manager/META-INF/context.xml
 /home/ec2-user/apache-tomcat-9.0.58/webapps/manager/META-INF/context.xml
 
+Edit these files 
 vi /home/ec2-user/apache-tomcat-9.0.58/webapps/host-manager/META-INF/context.xml
 vi /home/ec2-user/apache-tomcat-9.0.58/webapps/manager/META-INF/context.xml
 
@@ -33,15 +38,7 @@ User & Password Edit:
 # cd ../
 # cd conf
 # vi tomcat-users.xml
- add user details :
-	<role rolename="manager-gui"/>
-	<role rolename="manager-script"/>
-	<role rolename="manager-jmx"/>
-	<role rolename="manager-status"/>
-	<user username="admin" password="admin" roles="manager-gui, manager-script, manager-jmx, manager-status"/>
-	<user username="deployer" password="deployer" roles="manager-script"/>
-	<user username="tomcat" password="s3cret" roles="manager-gui"/>
-((((((EXAMPLE))))))))))
+
 -->
   <role rolename="manager-gui"/>
         <role rolename="manager-script"/>
@@ -50,8 +47,9 @@ User & Password Edit:
         <user username="admin" password="admin" roles="manager-gui, manager-script, manager-jmx, manager-status"/>
         <user username="deployer" password="deployer" roles="manager-script"/>
         <user username="tomcat" password="s3cret" roles="manager-gui"/>
-  </tomcat-users>
-(((((((EXAMPLE)))))))))))
+(copy from 43 line to 49 line into tomcat-users.xml file)
+ </tomcat-users>
+
 
 If you want to change tomcat port number:
 # cd conf/
