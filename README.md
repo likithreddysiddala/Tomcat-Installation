@@ -14,7 +14,7 @@ Start tomcat:
   
 (connecting outside world to edit context.xml) 
  search for context.xml
-# find / -name context.xml
+# sudo find / -name context.xml
 
 
 you will get three files 
@@ -37,7 +37,7 @@ After that restart tomcat services to effect these changes
 User & Password Edit:
 # cd ../
 # cd conf
-# vi tomcat-users.xml
+# sudo vi tomcat-users.xml
 
 -->
   <role rolename="manager-gui"/>
@@ -53,7 +53,7 @@ User & Password Edit:
 
 If you want to change tomcat port number:
 # cd conf/
-# vi server.xml
+# sudo vi server.xml
 
 Edit section under Connector port 8080 to 8090 (ur wish)
 
